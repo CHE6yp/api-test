@@ -4,7 +4,9 @@
     <div id="wrapper">
         <div id="container">
             <h1>Poststocats list</h1>
-
+            <p>
+                Удобнее конечно редактировать эту связь в постах или категориях, но в рамках crud логичнее так.
+            </p>
             <table>
                 <thead>
                     <tr>
@@ -14,7 +16,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="list">
                 {% for postsToCat in postsToCats %}
                     <tr>
                         <td><a href="{{ path('admin_ptc_show', { 'id': postsToCat.id }) }}">{{ postsToCat.id }}</a></td>

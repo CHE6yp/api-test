@@ -18,6 +18,18 @@
                 </tbody>
             </table>
 
+
+            <div style="background-color:#aa9; padding-left:30px;">
+                <p>
+                    <span>Посты категории:</span><br>
+                    <ul>
+                        {% for post in category.posts %}
+                            <li><a href="/admin/posts/{{post.id}}">{{post.id}}</a> {{post.title}}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+
             <ul>
                 <li>
                     <a href="{{ path('admin_categories_index') }}">Back to the list</a>

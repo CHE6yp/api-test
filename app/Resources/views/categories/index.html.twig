@@ -13,7 +13,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="list">
                 {% for category in categories %}
                     <tr>
                         <td><a href="{{ path('admin_categories_show', { 'id': category.id }) }}">{{ category.id }}</a></td>

@@ -28,6 +28,12 @@ class Users
      */
     public $name;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Posts", mappedBy="author")
+     */
+    public $posts;
+
     public function getId()
     {
         return $this->id;

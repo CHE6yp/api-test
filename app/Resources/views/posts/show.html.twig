@@ -21,10 +21,21 @@
                     </tr>
                     <tr>
                         <th>Authorid</th>
-                        <td>{{ post.authorId }}</td>
+                        <td>{{ post.authorId }} ({{post.author.name}})</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div style="background-color:#aa9; padding-left:30px;">
+                <p>
+                    <span>Категории поста:</span><br>
+                    <ul>
+                        {% for cat in post.categories %}
+                            <li><a href="/admin/categories/{{cat.id}}">{{cat.id}}</a> {{cat.category}}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
 
             <ul>
                 <li>

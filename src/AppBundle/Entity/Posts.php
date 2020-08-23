@@ -42,6 +42,19 @@ class Posts
      */
     private $authorId;
 
+    /**
+     * @var Users|null
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users", inversedBy="posts")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=true)
+     */
+    public $author;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Categories", mappedBy="posts")
+     */
+    public $categories;
+
     public function getId()
     {
         return $this->id;

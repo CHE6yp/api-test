@@ -28,6 +28,15 @@ class Categories
      */
     private $category;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Posts", inversedBy="categories")
+     * @ORM\JoinTable(name="posts_to_cats",
+     *      joinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")}
+     *      )
+     */
+    public $posts;
+
     public function getId()
     {
         return $this->id;

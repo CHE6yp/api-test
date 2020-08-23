@@ -13,7 +13,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="list">
                 {% for user in users %}
                     <tr>
                         <td><a href="{{ path('admin_users_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
