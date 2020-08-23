@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1>Админка</h1>
+            </div>
+
+            <div id="status">
+                <p>
+                    С этой страницы можно перейти на редактирование таблиц:
+                    <ul>
+                        <li><a href="/admin/users">Пользователи</a></li>
+                        <li><a href="/admin/posts">Посты</a></li>
+                        <li><a href="/admin/categories">Категории</a></li>
+                        <li><a href="/admin/ptc">Связь постов и категорий (перенести в посты?)</a></li>
+                    </ul>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}

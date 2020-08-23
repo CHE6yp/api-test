@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Poststocats list</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Postid</th>
+                        <th>Categoryid</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for postsToCat in postsToCats %}
+                    <tr>
+                        <td><a href="{{ path('admin_ptc_show', { 'id': postsToCat.id }) }}">{{ postsToCat.id }}</a></td>
+                        <td>{{ postsToCat.postId }}</td>
+                        <td>{{ postsToCat.categoryId }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('admin_ptc_show', { 'id': postsToCat.id }) }}">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin_ptc_edit', { 'id': postsToCat.id }) }}">edit</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('admin_ptc_new') }}">Create a new postsToCat</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

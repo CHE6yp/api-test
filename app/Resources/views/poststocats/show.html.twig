@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Poststocat</h1>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ postsToCat.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Postid</th>
+                        <td>{{ postsToCat.postId }}</td>
+                    </tr>
+                    <tr>
+                        <th>Categoryid</th>
+                        <td>{{ postsToCat.categoryId }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('admin_ptc_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_ptc_edit', { 'id': postsToCat.id }) }}">Edit</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
