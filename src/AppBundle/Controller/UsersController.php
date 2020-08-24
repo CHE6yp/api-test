@@ -44,6 +44,7 @@ class UsersController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            print_r($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();

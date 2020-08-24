@@ -39,7 +39,7 @@ class PostsToCatsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $postsToCat = new Poststocat();
+        $postsToCat = new PostsToCats();
         $form = $this->createForm('AppBundle\Form\PostsToCatsType', $postsToCat);
         $form->handleRequest($request);
 

@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <th>Authorid</th>
-                        <td>{{ post.authorId }} ({{post.author.name}})</td>
+                        <td>{% if post.authorId %}{{ post.authorId }} ({{post.author.name}}){% endif %}</td>
                     </tr>
                 </tbody>
             </table>

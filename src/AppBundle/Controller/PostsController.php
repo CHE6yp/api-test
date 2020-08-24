@@ -44,6 +44,8 @@ class PostsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $post->author_id = $post->authorId;
+            print_r($post);
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
