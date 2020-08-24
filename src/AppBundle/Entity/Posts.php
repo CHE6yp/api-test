@@ -19,21 +19,21 @@ class Posts
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
-    private $title;
+    public $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="text", type="string", length=255, nullable=true)
      */
-    private $text;
+    public $text;
 
     /**
      * @var integer
@@ -45,7 +45,7 @@ class Posts
     /**
      * @var Users|null
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users", inversedBy="posts")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users", inversedBy="posts", fetch="EAGER")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=true)
      */
     public $author;
@@ -53,7 +53,7 @@ class Posts
     /**
      * @ORM\ManyToMany(targetEntity="Categories", mappedBy="posts")
      */
-    public $categories;
+    private $categories;
 
     public function getId()
     {
@@ -88,6 +88,20 @@ class Posts
     public function setAuthorId($value='')
     {
         $this->authorId = $value;
+    }
+
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    public function getCategoriesArray()
+    {
+        $result = [];
+        foreach ($this->categories as $cat) {
+            $result[]=["id"=>$cat->getId(), "name"=>$cat->category];
+        }
+        return $result;
     }
 }
 

@@ -26,7 +26,7 @@ class Categories
      *
      * @ORM\Column(name="category", type="string", length=255, nullable=false)
      */
-    private $category;
+    public $category;
 
     /**
      * @ORM\ManyToMany(targetEntity="Posts", inversedBy="categories")
@@ -35,7 +35,7 @@ class Categories
      *      inverseJoinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")}
      *      )
      */
-    public $posts;
+    private $posts;
 
     public function getId()
     {
@@ -50,6 +50,11 @@ class Categories
     public function setCategory($value='')
     {
         $this->category = $value;
+    }
+
+    public function getPosts()
+    {
+        return $this->posts;
     }
 
 
