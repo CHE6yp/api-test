@@ -95,6 +95,7 @@ class Posts
         return $this->categories;
     }
 
+    //Этот метод тут потому что связь manyToMany не хочет сериализоваться 
     public function getCategoriesArray()
     {
         $result = [];
