@@ -40,7 +40,7 @@ class Posts
      *
      * @ORM\Column(name="author_id", type="integer", nullable=false)
      */
-    public $authorId=1;
+    private $authorId;
 
     /**
      * @var Users|null
