@@ -39,7 +39,7 @@ class PostsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $post = new Post();
+        $post = new Posts();
         $form = $this->createForm('AppBundle\Form\PostsType', $post);
         $form->handleRequest($request);
 
